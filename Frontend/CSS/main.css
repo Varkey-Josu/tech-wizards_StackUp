@@ -115,7 +115,7 @@ header section h2{
 }
 
 #About-us{
-    margin: 20px;
+    margin: 20px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -133,13 +133,12 @@ header section h2{
     margin: 50px 0px 30px;
 }
 .team{
-    width: 220px;
     height: 40px;
     background-color: #ffffff;
     border-radius: 40px;
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 5px 25px 5px 5px;
     margin: 5px;
 }
 .team p{
@@ -160,4 +159,11 @@ header section h2{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+#team-div a{
+    text-decoration: none;
+}
+marquee{
+    font-size: 20px;
+    font-weight: 500;
 }
