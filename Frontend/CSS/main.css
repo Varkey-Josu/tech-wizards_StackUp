@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #d9d9d9;
+    font-family: Epilogue;
+    font-size: 16px;
+    margin: 15px;
+    padding: 10px;
+}
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+header nav a{
+    text-decoration: none;
+    color: #000000;
+}
+.logo{
+    font-weight: 600;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul li{
+    list-style: none;
+    margin: 5px 15px;
+}
+nav ul li a{
+    font-weight: 300;
+    font-size: 14px;
+    color: #000000;
+}
+#active{
+    font-weight: 450;
+    color: #000000;
+}
+.sign-in div{
+    background-color: #000000;
+    height: 30px;
+    width: 95px;
+    border-radius: 30px;
+    text-align: center;
+    padding: 7px;
+}
+.sign-in{
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+header section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+header section p{
+    font-size: 14px;
+    font-weight: 700;
+    margin: 100px 10px 10px;
+}
+header section h2{
+    font-size: 90px;
+    margin: 10px;
+}
+#create-account div{
+    background-color: #ffffff;
+    width: 300px;
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+    padding: 18px;
+    border: 1px solid #ffffff;
+}
+#create-account{
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+}
+#create-account div:hover{
+    border: 1px solid #000000;
+}
+#heading{
+    margin: 30px;
+    text-align: center;
+}
