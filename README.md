@@ -5,7 +5,7 @@ Long Description about project. This project do that. This project is awesome...
 1. Name [Embed personal github URL]
 2. Name [Embed perosnal github URL]
 ## Team Id
-Team id here
+tech-wizards
 ## Link to product walkthrough
 [link to video]
 ## How it Works ?
