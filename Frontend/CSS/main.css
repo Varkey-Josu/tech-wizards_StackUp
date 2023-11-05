@@ -7,6 +7,8 @@ body{
     background-color: #d9d9d9;
     font-family: Epilogue;
     font-size: 16px;
+}
+header{
     margin: 15px;
     padding: 10px;
 }
@@ -43,11 +45,11 @@ nav ul li a{
 }
 .sign-in div{
     background-color: #000000;
-    height: 30px;
+    height: 36px;
     width: 95px;
     border-radius: 30px;
     text-align: center;
-    padding: 7px;
+    padding: 11px;
 }
 .sign-in{
     color: #ffffff;
