@@ -8,22 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Epilogue:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <script src="../Javascript/sign-in.js" defer type="module"></script>
 </head>
 <body>
     <div class="wrapper">
         <form action="">
             <h1>Sign-up</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" id="username" name="username" placeholder="Username" required>
             </div>
             <div class="input-box">
-                <input type="email" placeholder="Email-id" required>
+                <input type="email" id="email" name="email" placeholder="Email-id" required>
             </div>
             <div class="input-box">
-                <input type="password"
-                placeholder="Password" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn">Create Account</button>
+            <button type="submit" class="btn" id="signup">Create Account</button>
             <p id="or" align="center">-------OR-------</p>
             <a href="#" id="google-signin">
                 <div>Sign-up with Google</div>
