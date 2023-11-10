@@ -1,9 +1,9 @@
 ![StackUp Banner]([https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg])
-# Project Name
+# Tasker-Todo-App
 Long Description about project. This project do that. This project is awesome...
 ## Team members
-1. Name [Embed personal github URL]
-2. Name [Embed perosnal github URL]
+1. Varkey Josu [Embed personal github URL]
+2. Himanshu Nainwal [Embed perosnal github URL]
 ## Team Id
 tech-wizards
 ## Link to product walkthrough
