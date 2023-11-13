@@ -8,22 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Epilogue:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt&family=Ubuntu+Mono&display=swap" rel="stylesheet">
-    <script src="../Javascript/sign-in.js" defer type="module"></script>
+    
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
+        <form>
             <h1>Sign-up</h1>
             <div class="input-box">
-                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="text" id="username" placeholder="Username" required>
             </div>
             <div class="input-box">
-                <input type="email" id="email" name="email" placeholder="Email-id" required>
+                <input type="email" id="email" placeholder="Email-id" required>
             </div>
             <div class="input-box">
-                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn" id="signup">Create Account</button>
+            <button type="submit" id="signup">Create Account</button>
             <p id="or" align="center">-------OR-------</p>
             <a href="#" id="google-signin">
                 <div>Sign-up with Google</div>
@@ -35,4 +35,51 @@
             </form>
         </div>
 </body>
+<!--
+<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js"></script>-->
 </html>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+   // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC8DqWC16xVpRp4s05M5FkbLFKWzjIobkE",
+      authDomain: "tasker-todo-app.firebaseapp.com",
+      databaseURL: "https://tasker-todo-app-default-rtdb.firebaseio.com",
+      projectId: "tasker-todo-app",
+      storageBucket: "tasker-todo-app.appspot.com",
+      messagingSenderId: "481453018191",
+      appId: "1:481453018191:web:0ca6a1a9f800cac9222e3a"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth()
+
+    signup.addEventListener('click',(e)=>{
+
+        var email=document.getElementById('username').value;
+        var email=document.getElementById('email').value;
+        var email=document.getElementById('password').value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed up 
+                const user = userCredential.user;
+                alert('User created successfully');
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
+    })
+
+  </script>
