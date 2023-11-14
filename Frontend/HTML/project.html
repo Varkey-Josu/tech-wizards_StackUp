@@ -51,7 +51,7 @@
               <input type="date" id="calendar" required>
             </div>
           </div>
-          <button id="create-btn">Create</button>
+          <button id="create-btn" onclick="save()">Create</button>
         </div>
       </div>
     </section>
@@ -73,6 +73,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
   import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+  import { getDatabase } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
  // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -101,34 +102,19 @@
     });
   })
 
-  //posting data
-  var contactFormDB = firebase.database().ref("fields");
-  document.getElementById("fields").addEventListener("create-btn", submitForm);
-  function submitForm(e) {
-    e.preventDefault();
-    var projectname = getElementVal("project-name");
-    var projectdescription = getElementVal("project-description");
-    var date = getElementVal("calendar");
+  var database = firebase.database()
+  function save() {
+  var projectname = document.getElementById('project-name').value
+  var projectdescription = document.getElementById('project-description').value
+  var calendar = document.getElementById('calendar').value
 
-    saveMessages(projectname, projectdescription, date);
-    //   enable alert
-    alert('data sent');
-    //   reset the form
-    document.getElementById("fields").reset();
+  database.ref('users/' + username).set({
+    email : email,
+    password : password,
+    username : username
+  })
+  alert('Saved');
 }
 
-const saveMessages = (projectname, projectdescription, date) => {
-  var newContactForm = contactFormDB.push();
-
-  newContactForm.set({
-    projectname: projectname,
-    projectdescription: projectdescription,
-    date: date,
-  });
-};
-
-const getElementVal = (id) => {
-  return document.getElementById(id).value;
-};
 </script>
 </html>
