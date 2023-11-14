@@ -105,12 +105,13 @@ body{
     flex-direction: column;
     flex-wrap: wrap;
     position: relative;
-    top: 20%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: #131212;
     width: 700px;
     border-radius: 10px;
+    padding: 30px 10px;
 }
 
 #head0{
@@ -128,12 +129,57 @@ body{
 }
 #fields{
     display: flex;
-    align-items: center;
-    justify-items: left;
+    align-items: left;
+    justify-content: left;
     flex-direction: column;
     gap: 10px;
 }
-#fields input{
+#project-name{
     border: none;
-    background-color: 131212;
+    border-bottom: 1px solid #272727;
+    background-color: #131212;
+    width: 400px;
+    height: 50px;
+    margin: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #8a8a8a;
+}
+#project-description{
+    border: none;
+    border-bottom: 1px solid #272727;
+    background-color: #131212;
+    width: 400px;
+    height: 50px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #8a8a8a;
+}
+#create-btn{
+    width: 200px;
+    height: 35px;
+    border-radius: 40px;
+    margin: 20px 0px 0px;
+    font-size: 18px;
+    font-weight: 500;
+}
+#fields p{
+    color: #8a8a8a;
+}
+#date-sec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#calendar{
+    width: 200px;
+    height: 30px;
+    background-color: #131212;
+    color:#8a8a8a;
+    border: none;
+    font-size: 16px;
+    border-bottom: #272727;
+
 }
