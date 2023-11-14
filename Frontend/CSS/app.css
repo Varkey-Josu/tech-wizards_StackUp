@@ -56,7 +56,16 @@ body{
 #signout{
   text-decoration: none;
 }
-
+main{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#container,#container2{
+	width: 500px;
+}
 
 :root {
 	--dark: #374151;
@@ -70,7 +79,8 @@ body{
 
 #new-task-form {
 	display: flex;
-  align-items: center;
+	align-items: center;
+	justify-content: space-around;
 }
 
 input, button {
@@ -84,7 +94,7 @@ input, button {
 	flex: 1 1 0%;
 	background-color: var(--darker);
 	height: 40px;
-  padding: 0px 30px;
+    padding: 0px 15px;
 	border-radius: 50px;
 	margin-right: 1rem;
 	color: var(--light);
@@ -111,13 +121,6 @@ input, button {
 
 #new-task-submit:active {
 	opacity: 0.6;
-}
-
-main {
-	flex: 1 1 0%;
-	max-width: 800px;
-	width: 100%;
-	margin: 0 auto;
 }
 
 .task-list {
@@ -184,4 +187,80 @@ h2 {
 
 .task .actions .delete {
 	color: crimson;
+}
+
+
+.container {
+    background-color: #e6e6fa; /* Lilac color, replace #lblblb with a valid color code */
+    width: 500px;
+    padding: 4em 2em;
+    border-radius: 0.5em;
+	margin: 50px;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.section-container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    background-color: #b0a1ff; /* Lilac color, replace #3e3f43 with a valid color code */
+    color: #7d68a1; /* Adjusted text color for better visibility */
+}
+
+.btn-focus {
+    background-color: #7d68a1; /* Adjusted color for focus button */
+    color: #ffffff;
+}
+
+.time-btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+#time {
+    text-align: center;
+    color: #0e0d0d;
+    font-size: 5em;
+    font-weight: 600;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+#btn-start,
+#btn-pause {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+#btn-reset {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
