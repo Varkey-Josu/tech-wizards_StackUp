@@ -2,19 +2,19 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  body{
+}
+body{
     font-size: 16px;
     font-family: Epilogue;
     background-color: black;
     padding: 20px;
-  }
-  #btm-nav{
+}
+#btm-nav{
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  #btm-nav ul{
+}
+#btm-nav ul{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -24,32 +24,63 @@
     position: fixed;
     bottom: 0;
     margin: 20px;
-  }
-  #btm-nav ul li{
+}
+#btm-nav ul li{
     margin: 10px 30px;
     list-style: none;
-  }
-  #btm-nav ul li a{
+}
+#btm-nav ul li a{
     text-decoration: none;
     color:#8a8a8a;
-  }
-  #btm-nav #active{
+}
+#btm-nav #active{
     color: #fff;
-  }
-  #top-nav{
+}
+#top-nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 10px;
-  }
-  #top-nav p{
+}
+#top-nav p{
     font-size: 28px;
     font-weight: 700;
     color: #f1f1f1;
-  }
-  #top-nav a div{
-    background-color: #fff;
+}
+#signout{
+    text-decoration: none;
+    color: #000;
+}
+#signout div{
+    background-color: #f1f1f1;
     padding: 10px 20px;
     border-radius: 40px;
     color: #000;
-  }
+}
+#top-head{
+    color: #8a8a8a;
+    font-size: 18px;
+    font-weight: 500;
+    margin:30px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#page-name{
+    font-size: 20px;
+    font-weight: 600;
+}
+#new-project{
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 16px;
+}
+#new-project p{
+    background-color: rgb(98, 0, 255);
+    width: 150px;
+    text-align: center;
+    height: 35px;
+    border-radius: 35px;
+    padding: 10px;
+    
+}
