@@ -53,6 +53,9 @@ body{
   border-radius: 40px;
   color: #000;
 }
+#signout{
+  text-decoration: none;
+}
 
 
 :root {

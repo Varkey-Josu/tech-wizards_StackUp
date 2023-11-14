@@ -94,10 +94,42 @@
   signout.addEventListener('click',(e)=>{
     signOut(auth).then(() => {
       // Sign-out successful.
+      window.location.replace("index.html");
     })
     .catch((error) => {
       // An error happened.
     });
   })
+
+  //posting data
+  var contactFormDB = firebase.database().ref("fields");
+  document.getElementById("fields").addEventListener("create-btn", submitForm);
+  function submitForm(e) {
+    e.preventDefault();
+    var projectname = getElementVal("project-name");
+    var projectdescription = getElementVal("project-description");
+    var date = getElementVal("calendar");
+
+    saveMessages(projectname, projectdescription, date);
+    //   enable alert
+    document.querySelector(".alert").style.display = "block";
+
+    //   reset the form
+    document.getElementById("fields").reset();
+}
+
+const saveMessages = (projectname, projectdescription, date) => {
+  var newContactForm = contactFormDB.push();
+
+  newContactForm.set({
+    projectname: projectname,
+    projectdescription: projectdescription,
+    date: date,
+  });
+};
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
 </script>
 </html>
