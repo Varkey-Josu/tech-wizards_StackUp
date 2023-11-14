@@ -29,10 +29,34 @@
   <main>
     <div id="top-head">
         <p id="page-name">Projects</p>
-        <a id="new-project" href="#">
+        <a id="new-project" onclick="on()">
             <p>New Project</p>
         </a>
     </div>
+    <section>
+      <div id="overlay">
+        <div id="text">
+          <div id="head0">
+            <p id="head1">New Project</p>
+            <p id="close" onclick="off()">Close</p>
+          </div>
+          <div id="fields">
+            <input type="text" placeholder="Project Name" id="project-name" required>
+            <input type="text" placeholder="Description" id="project-description" required>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <script>
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
 </body>
 </html>
