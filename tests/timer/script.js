@@ -1,89 +1,108 @@
-class PomodoroTimer {
-    constructor() {
-        this.timer = null;
-        this.minutes = 25;
-        this.seconds = 0;
-        this.isPaused = false;
+let focusButton = document.getElementById("focus");
+let buttons = document.querySelectorAll(".btn");
+let shortBreakButton = document.getElementById("shortbreak");
+let longBreakButton = document.getElementById("longbreak");
+let startBtn = document.getElementById("btn-start");
+let reset = document.getElementById("btn-reset");
+let pause = document.getElementById("btn-pause");
+let time = document.getElementById("time");
+let set;
+let active = "focus";
+let count = 59;
+let paused = true;
+let minCount = 24;
+time.textContent = `${minCount + 1}:00`;
 
-        this.elements = {
-            focusBtn: document.getElementById("focus"),
-            shortBreakBtn: document.getElementById("shortbreak"),
-            longBreakBtn: document.getElementById("longbreak"),
-            timeDisplay: document.getElementById("time"),
-            startBtn: document.getElementById("btn-start"),
-            pauseBtn: document.getElementById("btn-pause"),
-            resetBtn: document.getElementById("btn-reset")
-        };
+const appendZero = (value) => {
+  value = value < 10 ? `0${value}` : value;
+  return value;
+};
 
-        this.elements.focusBtn.addEventListener("click", () => this.startTimer(25, 0));
-        this.elements.shortBreakBtn.addEventListener("click", () => this.startTimer(5, 0));
-        this.elements.longBreakBtn.addEventListener("click", () => this.startTimer(15, 0));
-        this.elements.startBtn.addEventListener("click", () => this.toggleTimer());
-        this.elements.pauseBtn.addEventListener("click", () => this.toggleTimer());
-        this.elements.resetBtn.addEventListener("click", () => this.resetTimer());
-
-        this.updateTimeDisplay();
+reset.addEventListener(
+  "click",
+  (resetTime = () => {
+    pauseTimer();
+    switch (active) {
+      case "long":
+        minCount = 14;
+        break;
+      case "short":
+        minCount = 4;
+        break;
+      default:
+        minCount = 24;
+        break;
     }
+    count = 59;
+    time.textContent = `${minCount + 1}:00`;
+  })
+);
 
-    startTimer(minutes, seconds) {
-        if (this.timer !== null) {
-            this.stopTimer();
-        }
+const removeFocus = () => {
+  buttons.forEach((btn) => {
+    btn.classList.remove("btn-focus");
+  });
+};
 
-        this.minutes = minutes;
-        this.seconds = seconds;
-        this.isPaused = false;
+focusButton.addEventListener("click", () => {
+  removeFocus();
+  focusButton.classList.add("btn-focus");
+  pauseTimer();
+  minCount = 24;
+  count = 59;
+  time.textContent = `${minCount + 1}:00`;
+});
 
-        this.timer = setInterval(() => {
-            if (this.seconds > 0) {
-                this.seconds--;
-            } else if (this.minutes > 0) {
-                this.minutes--;
-                this.seconds = 59;
-            } else {
-                this.stopTimer();
-                return;
-            }
+shortBreakButton.addEventListener("click", () => {
+  active = "short";
+  removeFocus();
+  shortBreakButton.classList.add("btn-focus");
+  pauseTimer();
+  minCount = 4;
+  count = 59;
+  time.textContent = `${appendZero(minCount + 1)}:00`;
+});
 
-            this.updateTimeDisplay();
-        }, 1000);
+longBreakButton.addEventListener("click", () => {
+  active = "long";
+  removeFocus();
+  longBreakButton.classList.add("btn-focus");
+  pauseTimer();
+  minCount = 14;
+  count = 59;
+  time.textContent = `${minCount + 1}:00`;
+});
 
-        this.toggleControls(true);
-    }
+pause.addEventListener(
+  "click",
+  (pauseTimer = () => {
+    paused = true;
+    clearInterval(set);
+    startBtn.classList.remove("hide");
+    pause.classList.remove("show");
+    reset.classList.remove("show");
+  })
+);
 
-    stopTimer() {
-        clearInterval(this.timer);
-        this.timer = null;
-        this.toggleControls(false);
-    }
-
-    toggleTimer() {
-        if (this.timer === null) {
-            this.startTimer(this.minutes, this.seconds);
+startBtn.addEventListener("click", () => {
+  reset.classList.add("show");
+  pause.classList.add("show");
+  startBtn.classList.add("hide");
+  startBtn.classList.remove("show");
+  if (paused) {
+    paused = false;
+    time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
+    set = setInterval(() => {
+      count--;
+      time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
+      if (count == 0) {
+        if (minCount != 0) {
+          minCount--;
+          count = 60;
         } else {
-            this.isPaused = !this.isPaused;
-            this.toggleControls(this.isPaused);
+          clearInterval(set);
         }
-    }
-
-    resetTimer() {
-        this.stopTimer();
-        this.minutes = 25;
-        this.seconds = 0;
-        this.updateTimeDisplay();
-    }
-
-    updateTimeDisplay() {
-        const formattedMinutes = this.minutes.toString().padStart(2, "0");
-        const formattedSeconds = this.seconds.toString().padStart(2, "0");
-        this.elements.timeDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
-    }
-
-    toggleControls(isPaused) {
-        this.elements.startBtn.style.display = isPaused ? "block" : "none";
-        this.elements.pauseBtn.style.display = isPaused ? "none" : "block";
-        this.elements.resetBtn.style.display = isPaused ? "block" : "none";
-    }
-}
-
-new PomodoroTimer();
+      }
+    }, 1000);
+  }
+});
