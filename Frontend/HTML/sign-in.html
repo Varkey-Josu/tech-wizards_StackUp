@@ -67,6 +67,7 @@
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
+                window.location.replace("app.html");
                 alert('User signed in successfully');
             })
             .catch((error) => {
