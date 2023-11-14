@@ -25,14 +25,14 @@
         <a id="active" href="project.html">Projects</a>
       </li>
       <li>
-        <a href="#">Profile</a>
+        <a href="profile.html">Profile</a>
       </li>
     </ul>
   </nav>
   <main>
     <div id="top-head">
         <p id="page-name">Projects</p>
-        <a id="new-project" onclick="on()">
+        <a href="#" id="new-project" onclick="on()">
             <p>New Project</p>
         </a>
     </div>
@@ -112,8 +112,7 @@
 
     saveMessages(projectname, projectdescription, date);
     //   enable alert
-    document.querySelector(".alert").style.display = "block";
-
+    alert('data sent');
     //   reset the form
     document.getElementById("fields").reset();
 }
