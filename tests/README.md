@@ -1,2 +1,2 @@
 # Tests
-Add the test files here.
+This the code palayground where you can find elements of the app being tested.
