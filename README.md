@@ -4,7 +4,7 @@ Long Description about project. This project do that. This project is awesome...
 ## Team members
 1. Varkey Josu [Embed personal github URL]
 2. Himanshu Nainwal [Embed perosnal github URL]
-3. Malavika Sureshbabu [<a href="#">GitHub 🔗</a>]
+3. Malavika Sureshbabu [<a href="https://github.com/Malavikaasureshh">GitHub 🔗</a>]
 ## Team Id
 tech-wizards
 ## Link to product walkthrough
