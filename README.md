@@ -2,8 +2,8 @@
 # Tasker-Todo-App
 Long Description about project. This project do that. This project is awesome...
 ## Team members
-1. Varkey Josu [Embed personal github URL]
-2. Himanshu Nainwal [Embed perosnal github URL]
+1. Varkey Josu [<a href="https://github.com/Malavikaasureshh">GitHub 🔗</a>]
+2. Himanshu Nainwal [<a href="https://github.com/Malavikaasureshh">GitHub 🔗</a>]
 3. Malavika Sureshbabu [<a href="https://github.com/Malavikaasureshh">GitHub 🔗</a>]
 ## Team Id
 tech-wizards
