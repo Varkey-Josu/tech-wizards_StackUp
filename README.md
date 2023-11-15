@@ -1,4 +1,4 @@
-![StackUp Banner]([https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg])
+[https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg]
 # Tasker-Todo-App
 Long Description about project. This project do that. This project is awesome...
 ## Team members
