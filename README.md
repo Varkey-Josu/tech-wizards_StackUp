@@ -2,7 +2,7 @@
 # Tasker-Todo-App
 Long Description about project. This project do that. This project is awesome...
 ## Team members
-1. Varkey Josu [<a href="https://github.com/Malavikaasureshh">GitHub 🔗</a>]
+1. Varkey Josu [<a href="https://github.com/Varkey-Josu">GitHub 🔗</a>]
 2. Himanshu Nainwal [<a href="https://github.com/nainwal09">GitHub 🔗</a>]
 3. Malavika Sureshbabu [<a href="https://github.com/Malavikaasureshh">GitHub 🔗</a>]
 ## Team Id
