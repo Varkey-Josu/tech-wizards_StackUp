@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo-App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Epilogue:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../CSS/project.css">
+</head>
+<body>
+  <nav id="top-nav">
+    <p>Tasker</p>
+    <a id="signout" href="#">
+      <div>Sign-out</div>
+    </a>
+  </nav>
+  <nav id="btm-nav">
+    <ul>
+      <li>
+        <a href="app.html">Pomodoro Timer</a>
+      </li>
+      <li>
+        <a id="active" href="project.html">Projects</a>
+      </li>
+      <li>
+        <a href="profile.html">Profile</a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div id="top-head">
+        <p id="page-name">Projects</p>
+        <a href="#" id="new-project" onclick="on()">
+            <p>New Project</p>
+        </a>
+    </div>
+    <section>
+      <div id="overlay">
+        <div id="text">
+          <div id="head0">
+            <p id="head1">New Project</p>
+            <p id="close" onclick="off()">Close</p>
+          </div>
+          <div id="fields">
+            <input type="text" placeholder="Project Name" id="project-name" required>
+            <input type="text" placeholder="Description" id="project-description" required>
+            <div id="date-sec">
+              <p>End Date</p>
+              <input type="date" id="calendar" required>
+            </div>
+          </div>
+          <button id="create-btn" onclick="save()">Create</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
+</body>
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+  import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+  import { getDatabase } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+ // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyC8DqWC16xVpRp4s05M5FkbLFKWzjIobkE",
+    authDomain: "tasker-todo-app.firebaseapp.com",
+    databaseURL: "https://tasker-todo-app-default-rtdb.firebaseio.com",
+    projectId: "tasker-todo-app",
+    storageBucket: "tasker-todo-app.appspot.com",
+    messagingSenderId: "481453018191",
+    appId: "1:481453018191:web:0ca6a1a9f800cac9222e3a"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth()
+
+  signout.addEventListener('click',(e)=>{
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      window.location.replace("../index.html");
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+  })
+
+  var database = firebase.database()
+  function save() {
+  var projectname = document.getElementById('project-name').value
+  var projectdescription = document.getElementById('project-description').value
+  var calendar = document.getElementById('calendar').value
+
+  database.ref('users/' + username).set({
+    email : email,
+    password : password,
+    username : username
+  })
+  alert('Saved');
+}
+
+</script>
+</html>

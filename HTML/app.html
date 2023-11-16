@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo-App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Epilogue:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/app.css">
+</head>
+<body>
+  <nav id="top-nav">
+    <p>Tasker</p>
+    <a href="#" id="signout">
+      <div>Sign-out</div>
+    </a>
+  </nav>
+  <nav id="btm-nav">
+    <ul>
+      <li>
+        <a id="active" href="app.html">Pomodoro Timer</a>
+      </li>
+      <li>
+        <a href="project.html">Projects</a>
+      </li>
+      <li>
+        <a href="profile.html">Profile</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="section-container">
+          <button id="focus" class="btn btn-timer btn-focus">Focus</button>
+          <button id="shortbreak" class="btn btn-shortbreak">Short Break</button>
+          <button id="longbreak" class="btn btn-longbreak">Long Break</button>
+      </div>
+      <div class="time-btn-container">
+          <span id="time"></span>
+          <div class="btn-container">
+              <button id="btn-start" class="show">Start</button>
+              <button id="btn-pause" class="hide">Pause</button>
+              <button id="btn-reset" class="hide">
+                  <i class="fa-solid fa-rotate-right"></i>
+              </button>
+          </div>
+      </div>
+    </div>
+    <div id="container2">
+      <h2>Tasks</h2>
+      <form id="new-task-form">
+        <input type="text" name="new-task-input" id="new-task-input" placeholder="What do you have planned?" />
+			  <input type="submit" id="new-task-submit" value="Add task" />
+		  </form>
+      <section class="task-list">
+        <div id="tasks"></div>
+      </section>
+    </div>
+  </main>
+  
+  <script src="../Javascript/script.js"></script>
+  <script src="../Javascript/ToDo.js"></script>
+</body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+  import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+ // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyC8DqWC16xVpRp4s05M5FkbLFKWzjIobkE",
+    authDomain: "tasker-todo-app.firebaseapp.com",
+    databaseURL: "https://tasker-todo-app-default-rtdb.firebaseio.com",
+    projectId: "tasker-todo-app",
+    storageBucket: "tasker-todo-app.appspot.com",
+    messagingSenderId: "481453018191",
+    appId: "1:481453018191:web:0ca6a1a9f800cac9222e3a"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth()
+
+  signout.addEventListener('click',(e)=>{
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      window.location.replace("../index.html");
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+  })
+
+</script>
+</html>
