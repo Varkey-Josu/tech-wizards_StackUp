@@ -1,8 +1,8 @@
 ![StackUp](https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg)
 # Tasker-Todo-App
----------------------------<br>
+---------------------------------------------------<br>
 🌐 <b>LIVE WEB APP</b>: https://varkey-josu.github.io/tech-wizards_StackUp/index.html<br>
----------------------------<br>
+---------------------------------------------------<br>
 Tasker is a productivity based application designed for increasing the efficiency and time management skills of a person.<br>
 The is comprised with following features,<br>
 -🍅Pomodoro Timer<br>
