@@ -1,7 +1,12 @@
 ![StackUp](https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg)
 # Tasker-Todo-App
 🌐 <b>LIVE WEB APP</b>: https://varkey-josu.github.io/tech-wizards_StackUp/index.html<br>
-Long Description about project. This project do that. This project is awesome...
+---------------------------<br>
+Tasker is a productivity based application designed for increasing the efficiency and time management skills of a person.<br>
+The is comprised with following features,
+-🍅Pomodoro Timer
+-📝Daily Task List
+-🚀Project Organizer
 ## Team members
 1. Varkey Josu [<a href="https://github.com/Varkey-Josu">GitHub 🔗</a>]
 2. Himanshu Nainwal [<a href="https://github.com/nainwal09">GitHub 🔗</a>]
