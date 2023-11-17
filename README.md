@@ -1,6 +1,6 @@
 ![StackUp](https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg)
 # Tasker-Todo-App
-🌐 LIVE WEB APP: https://varkey-josu.github.io/tech-wizards_StackUp/index.html
+🌐 <b>LIVE WEB APP</b>: https://varkey-josu.github.io/tech-wizards_StackUp/index.html<br>
 Long Description about project. This project do that. This project is awesome...
 ## Team members
 1. Varkey Josu [<a href="https://github.com/Varkey-Josu">GitHub 🔗</a>]
